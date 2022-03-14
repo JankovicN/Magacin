@@ -13,7 +13,11 @@ public abstract class Artikal {
 		return naziv;
 	}
 	
-	public void setNaziv(String naziv) {
+	public void setNaziv(String naziv) throws Exception{
+		
+		if(naziv==null || naziv.isEmpty()){
+			throw new Exception("Naziv mora biti definisan!");
+		}
 		this.naziv = naziv;
 	}
 	
@@ -21,7 +25,10 @@ public abstract class Artikal {
 		return sifra;
 	}
 	
-	public void setSifra(int sifra) {
+	public void setSifra(int sifra) throws Exception{
+		if(sifra<0){
+			throw new Exception("Sifra ne sme biti manja od 0!");
+		}
 		this.sifra = sifra;
 	}
 	
@@ -29,7 +36,10 @@ public abstract class Artikal {
 		return opis;
 	}
 	
-	public void setOpis(String opis) {
+	public void setOpis(String opis) throws Exception{
+		if(opis==null || opis.isEmpty()){
+			throw new Exception("Opis mora biti definisan!");
+		}
 		this.opis = opis;
 	}
 	
@@ -37,7 +47,10 @@ public abstract class Artikal {
 		return kolicina;
 	}
 	
-	public void setKolicina(int kolicina) {
+	public void setKolicina(int kolicina) throws Exception{
+		if(kolicina<0){
+			throw new Exception("Kolicina ne sme biti manja od 0!");
+		}
 		this.kolicina = kolicina;
 	}
 

@@ -11,7 +11,10 @@ public class KucnaHemija extends Artikal {
 		return rokTrajanja;
 	}
 
-	public void setRokTrajanja(Date rokTrajanja) {
+	public void setRokTrajanja(Date rokTrajanja) throws Exception{
+		if(rokTrajanja.before(new Date())){
+			throw new Exception("Rok tranja mora biti nakon danasnjeg datuma!");
+		}
 		this.rokTrajanja = rokTrajanja;
 	}
 

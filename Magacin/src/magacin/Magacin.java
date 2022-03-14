@@ -8,24 +8,30 @@ import artikli.Artikal;
 public class Magacin implements InterfejsMagacin {
 	
 	List<Artikal> artikli = new ArrayList<>();
-
+	
 	@Override
 	public void dodajArtikal(Artikal artikal) {
 
-		if(artikal!=null)
-			artikli.add(0, artikal);
+		if (artikal!=null) {
+			artikli.add(artikal);
+		}
 
 	}
 
 	@Override
 	public void izbaciArtikal(Artikal artikal) {
-		// TODO Auto-generated method stub
+		if(artikal!=null) {
+			artikli.remove(artikal);
+		}
 
 	}
 
 	@Override
 	public Artikal pronadjiArtikal(int sifra) {
-		// TODO Auto-generated method stub
+		for (Artikal a : artikli) {
+			if(a.getSifra()==sifra)
+				return a;
+		}
 		return null;
 	}
 
